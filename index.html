@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
         <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/app.css">
+        <link rel="stylesheet" href="assets/css/simple-sidebar.css">
         <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -23,10 +24,28 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Menu -->
-        <div ng-include="'app/navigation/navigation.html'"></div>
+        <!-- TODO: HTML5 refactorisation -->
+        <div id="wrapper">
 
-        <div ng-view></div>
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <div ng-include="'app/navigation/navigation.html'"></div>
+            </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container">
+                    <!-- Include view -->
+                    <div ng-view></div>
+
+                    <!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
 
         <!-- Angularjs -->
         <script src="bower_components/angular/angular.js"></script>
